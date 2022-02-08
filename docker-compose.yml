@@ -2,7 +2,7 @@ version: "3.7"
 services:
   app:
     image: elixir:1.10
-    container_name: "${COMPOSE_PROJECT_NAME}app"
+    container_name: "app"
     volumes:
         - ./:/var/www/application/
     working_dir: "/var/www/application/"
@@ -12,13 +12,13 @@ services:
 
   nginx:
     image: nginx:1.17
-    container_name: "${COMPOSE_PROJECT_NAME}nginx"
+    container_name: "nginx"
     ports:
       - "80:80"
 
   postgres:
     image: postgres:9.5
-    container_name: "${COMPOSE_PROJECT_NAME}postgres"
+    container_name: "postgres"
     volumes:
       - ./postgres:/var/lib/postgres
     environment:
