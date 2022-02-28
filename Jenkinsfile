@@ -1,24 +1,13 @@
-Pipeline {
+pipeline {
+    agent { label 'slave01'}
 
-    Agent any
-
-    Stages {
-        
-        stage('Verificar conexão com repositorio'){
-
-            echo "Pipeline Usando Jenkinsfile"
-
+    stages {
+        stage('Deploy application') {
+            steps {
+              sh '''
+               docker-compose up -d
+              ''' 
+            }
         }
-
-        stage('BUILD IMAGE TO DOCKER HUB'){
-
-            echo "Pipeline Usando Jenkinsfile"
-
-        }
-    
-    
-    }
-
-
-
+    }   
 }
