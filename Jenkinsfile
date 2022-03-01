@@ -9,5 +9,12 @@ pipeline {
               ''' 
             }
         }
+        stage('Stop application') {
+            steps {
+              sh '''
+               docker-compose stop
+              ''' 
+            }
+        }
     }   
 }
