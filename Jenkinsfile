@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy application') {
             steps {
               sh '''
-               docker -version
+               docker-compose up -D
               ''' 
             }
         }
