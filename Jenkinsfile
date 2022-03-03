@@ -5,7 +5,7 @@ pipeline {
             stage('Validade docker its running') {
             steps {
               sh '''
-               docker -version
+               docker --info
               ''' 
               }
             }
