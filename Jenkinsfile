@@ -2,7 +2,7 @@ pipeline {
     agent { label 'slave'}
 
     stages {
-            stage('Validade docker it's running') {
+            stage('Validade docker its running') {
             steps {
               sh '''
                docker-compose up -d
