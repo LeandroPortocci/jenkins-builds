@@ -2,7 +2,14 @@ pipeline {
     agent { label 'slave'}
 
     stages {
-        stage('Deploy application') {
+            stage('Validade docker it's running') {
+            steps {
+              sh '''
+               docker-compose up -d
+              ''' 
+            `     }
+            }
+           stage('Deploy application') {
             steps {
               sh '''
                docker-compose up -d
