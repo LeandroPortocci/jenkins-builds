@@ -14,14 +14,21 @@ pipeline {
               sh '''
                docker-compose up -d
               ''' 
+              }
             }
-        }
-        stage('Stop application') {
+            stage('Stop application') {
             steps {
               sh '''
                docker-compose stop
               ''' 
+              }
             }
-        }
+            stage('Starde application') {
+            steps {
+              sh '''
+               docker-compose start
+              ''' 
+              }
+            }
     }   
 }
