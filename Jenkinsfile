@@ -23,7 +23,7 @@ pipeline {
               ''' 
               }
             }
-            stage('Starde application') {
+            stage('Start application') {
             steps {
               sh '''
                docker-compose start
